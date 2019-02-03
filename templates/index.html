@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/all.css' ) }}">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css' ) }}">
+  <!-- Custom -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css' ) }}">
+  <title>BT Real Estate</title>
+</head>
+
+<body>
+ 
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="{ url_for('static', filename='img/logo.png' ) }}" class="logo" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  {% from "_formhelpers.html" import render_field %}
+  <!-- Showcase -->
+  <section id="showcase">
+    <div class="container text-center">
+      <div class="home-search p-5">
+        <div class="overlay p-5">
+          <h1 class="display-6 mb-6">
+              Predicting Fire Outbreaks with Artificial Neural Networks
+          </h1>
+          <p class="lead">Fill in values for these features to obtain an outcome from the Algorithm</p>
+          <div class="search">
+            <form method="POST", action="/results">
+              <!-- Form Row 1 -->
+              <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    {{ render_field(form.TempComedor) }}
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    {{ render_field(form.TempHabit) }}
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    {{ render_field(form.WeatherTemp) }}
+                </div>
+                <div class="col-md-3 mb-3">
+                    {{ render_field(form.CO2Comedor) }}
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-3 mb-3">
+                  {{ render_field(form.CO2Habit) }}
+                  </div>
+  
+                  <div class="col-md-3 mb-3">
+                      {{ render_field(form.HumedadComedor) }}
+                  </div>
+  
+                  <div class="col-md-3 mb-3">
+                      {{ render_field(form.HumedadHabit) }}
+                  </div>
+                  <div class="col-md-3 mb-3">
+                      {{ render_field(form.LightingComedor) }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                    {{ render_field(form.LightingHabit) }}
+                    </div>
+    
+                    <div class="col-md-3 mb-3">
+                        {{ render_field(form.Precipita) }}
+                    </div>
+    
+                    <div class="col-md-3 mb-3">
+                        {{ render_field(form.MeteoExterior) }}
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        {{ render_field(form.MeteoExterior1) }}
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-3 mb-3">
+                      {{ render_field(form.MeteoExterior2) }}
+                      </div>
+      
+                      <div class="col-md-3 mb-3">
+                          {{ render_field(form.MeteoExterior3) }}
+                      </div>
+      
+                      <div class="col-md-3 mb-3">
+                          {{ render_field(form.MeteoExterior4) }}
+                      </div>
+                      <div class="col-md-3 mb-3">
+                          {{ render_field(form.MeteoExteriorPiranometro) }}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-4 mb-4">
+                        {{ render_field(form.TemperatureExteriorSensor) }}
+                      </div>
+        
+                        <div class="col-md-4 mb-4">
+                            {{ render_field(form.HumedadExteriorSensor) }}
+                        </div>
+        
+                        <div class="col-md-4 mb-4">
+                            {{ render_field(form.DayOfWeek) }}
+                        </div>
+                      
+                      </div>  
+              <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  
+  <!-- Footer -->
+  <footer id="main-footer" class="py-4 bg-primary text-white text-center">
+    Copyright &copy;
+    <span class="year"></span> Fire Prediction
+  </footer>
+
+  <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js' ) }}"></script>
+  <script src="{{ url_for('static',filename='js/bootstrap.bundle.min.js' ) }} "></script>
+  <script src="{ url_for('static',filename='js/main.js' ) }}"></script>
+</body>
+
+</html>

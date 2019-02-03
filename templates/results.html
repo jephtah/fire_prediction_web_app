@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fire Prediction</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/all.css' ) }}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css' ) }}">
+    <!-- Custom -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css' ) }}">
+  </head>
+  <body>
+    <section id="showcase">
+      <div class="container text-center">
+        <div class="display-6 mb-6">
+          <h1>Your Entered Values are :</h1>
+          <p>{{ content }}</p>
+        </div>
+        <h1></h1>
+        <div class="align-baseline">
+          <div class="col-md-12 mb-3">
+            <h1 > RESULT: {{ prediction }}</h1>
+          </div>
+        </div>
+        <div class='button'>
+            <form action="/">
+              <input type="submit" class="btn btn-secondary" value="Run another Test">
+            </form>
+        </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="py-4 bg-primary text-white text-center">
+      Copyright &copy;
+      <span class="year"></span> Fire Prediction
+  </footer>
+
+  </body>
+</html>
